@@ -14,7 +14,11 @@ class Mariage extends Model
         'published_at',
     ];
 
-    public function user() {
+    public function users() {
     	return $this->hasMany('App\User');
+    }
+
+    public function article() {
+        return $this->hasMany('App\Article');
     }
 }

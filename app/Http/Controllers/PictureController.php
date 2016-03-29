@@ -2,31 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use Storage;
+use File;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Category;
 use App\Picture;
+use App\PictureArticle;
 use Validator;
-
 
 class PictureController extends Controller
 {
     public function index() {
-    	$pictures = Picture::paginate(10);
+    	$pictures = Picture::paginate(12);
 
-        return view('admin.picture.index')->with('pictures', $pictures);
+        return view('admin.picture.index', compact('pictures'));
     }
+
 
 	/* 2. This method relates to the "add new picture" view */
 	public function create() {
+        $categories = Category::lists('title', 'id');
 
-		return view('admin.picture.add-new-picture');
+		return view('admin.picture.add-new-picture', compact('categories'));
 	}
 
 	public function store(Request $request) {
-		//dd($request->all());
 
     	// Validation //
         $validation = Validator::make($request->all(), [
@@ -44,11 +46,12 @@ class PictureController extends Controller
         $picture = new Picture;
 
         $file = $request->file('userfile');
+        $category = $request->input('category_id');
         $destination_path = 'uploads/';
         $filename = str_random(6).'_'.$file->getClientOriginalName();
 
         $picture = Picture::create([
-        	'uri' => $filename
+            'category_id' => $category,
         ]);
         $file->move($destination_path, $filename);
         
@@ -69,9 +72,10 @@ class PictureController extends Controller
 
 	/* 4. This method relates to the "edit picture" view */
     public function edit($id) {
+        $categories = Category::lists('title', 'id');
         $picture = Picture::find($id);
 
-        return view('admin.picture.edit-picture')->with('picture', $picture);
+        return view('admin.picture.edit-picture', compact('categories'))->with('picture', $picture);
     }
 
   	public function update(Request $request, $id) {
@@ -93,9 +97,15 @@ class PictureController extends Controller
 		// if user choose a file, replace the old one //
 		if( $request->hasFile('userfile') ){
 			$file = $request->file('userfile');
+            $category = $request->input('category_id');
 			$destination_path = 'uploads/';
 			$filename = str_random(6).'_'.$file->getClientOriginalName();
-			$file->move($destination_path, $filename);
+
+            $picture->update([
+                'category_id' => $category,
+            ]);
+
+            $file->move($destination_path, $filename);
 			$picture->file = $destination_path . $filename;
 		}
 
@@ -106,11 +116,13 @@ class PictureController extends Controller
 		return redirect('/picture')->with('message','You just updated an picture!');
 	}
 
-	public function destroy($id) {
-		$picture = Picture::find($id);
-		/*if ($picture) {
-            Storage::delete('uploads/'.$picture->uri); // file
-        }*/
+	public function destroy(Picture $picture) {
+        
+        $file = $picture->file;
+        if(File::exists($file)) {
+            File::delete($picture->file);
+        }
+
 		$picture->delete();
 
 		return redirect('/picture')->with('message','You just uploaded an picture!');
