@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 USERNAME='root'
-PASSWORD=''
+PASSWORD='caribbean'
 DBNAME='caribbean'
 HOST='localhost'
 

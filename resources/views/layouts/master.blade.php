@@ -7,12 +7,12 @@
 	<title>Panier Laravel</title>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" type="text/css" href="{{url('assets/css/swiper.min.css')}}">
 	<link type="text/css" rel="stylesheet" href="{{url('assets/css/owl.carousel.css')}}">
 	<link type="text/css" rel="stylesheet" href="{{url('assets/css/animate.css')}}">
 	<!-- mon css -->
 	<link rel="stylesheet" type="text/css" href="{{url('assets/css/app.min.css')}}">
-	
 	
 </head>
 
@@ -48,7 +48,12 @@
 	<!-- Lightbox Gallery -->
 	<script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
     <script>
-    	var swiper = new Swiper('.swiper-container');
+        var swiper = new Swiper('.swiper-container-laure', {
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30
+        });
     </script>
 
 	<script>
@@ -64,6 +69,8 @@
 			});
 		});
 	</script>
+
+
 
 	<script>
 		$(window).on("load", function() {
