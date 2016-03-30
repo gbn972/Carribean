@@ -2,6 +2,9 @@
 
 @section('content')
 	@parent
-	<p id="home">page des formules</p>
-
+	<section>
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+	</section>
 @stop
