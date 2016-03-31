@@ -3,7 +3,199 @@
 }
 
 .swiper-container-laure{
+  overflow: hidden;
   .image1{
-     background-color: #0000AA;
+     background-color: #00b3ee;
+  }
+
+}
+
+.pascal{
+  position: absolute;
+  border: 2px solid #dce7fc;
+}
+
+
+.laure{
+  position: absolute;
+  border: 2px solid #dce7fc;
+}
+
+
+.pink{
+  color: #c92f51;
+}
+
+.esprit{
+  position: absolute;
+  left: 5%;
+  width: 20%;
+  top: 16%;
+  border: 2px solid #dce7fc;
+  padding-left: 25px;
+  padding-right:25px;
+  background-color: white;
+  height : 430px;
+
+    h1{
+      text-transform: uppercase;
+      font-size: 30px;
+      font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+      padding-top: 31px;
+      padding-bottom: 27px;
+    }
+
+    p{
+      text-align: justify;
+      font-size: 14px;
+      font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+      margin-bottom: 28px;
+    }
+}
+
+.engagement{
+  position: absolute;
+  left: 5%;
+  width: 20%;
+  top: 16%;
+  border: 2px solid #dce7fc;
+  padding-left: 25px;
+  padding-right:25px;
+  background-color: white;
+  height : 430px;
+
+  ul {
+    color: black;
+    display : list-item;
+    list-style-image: url('../images/anneaux-rose.png');
+   }
+
+  ul li{
+    padding-bottom: 25px;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+    text-align: justify;
+  }
+
+  h1{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+    padding-top: 31px;
+    padding-bottom: 27px;
+  }
+
+
+}
+
+.choisir{
+  position: absolute;
+  left: 5%;
+  width: 20%;
+  top: 16%;
+  border: 2px solid #dce7fc;
+  padding-left: 25px;
+  padding-right:25px;
+  background-color: white;
+  height: 430px;
+
+  ul li{
+    padding-bottom: 25px;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+    text-align: justify;
+  }
+
+  h1{
+    text-transform: uppercase;
+
+    font-size: 30px;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+    padding-top: 31px;
+    padding-bottom: 27px;
+  }
+}
+.image5 {
+  background-image: url("../images/christina.jpg");
+
+}
+
+.image4{
+  background-image: url("../images/marry-me.png");
+  background-size: cover;
+}
+
+.image2, .image3 {
+  background-image: url("../images/conciergerie_caribbean.jpg");
+}
+
+.christina{
+  position: absolute;
+  left: 5%;
+  width: 20%;
+  top: 16%;
+  border: 2px solid #dce7fc;
+  background-color: #ffffff;
+  padding-left: 25px;
+  padding-right:25px;
+  height: 432px;
+  padding-top: 31px;
+  h1{
+    text-transform: uppercase;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+  }
+
+
+
+  .title-christina{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+    padding-bottom: 28px;
+    color: #c92f51;
+    text-align: center;
+  }
+  .fondatrice{
+    font-size: 12px;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+    margin-bottom: 55px;
+    letter-spacing: 6px;
+    color: #c92f51;
+    text-align: center;
+  }
+
+  p{
+    font-size: 14px;
+    font-family: 'ProximaNovaLight',verdana, arial, sans-serif;
+    text-align: justify;
+  }
+
+  #partie1{
+    padding-bottom: 25px;
+  }
+
+  #partie2{
+    padding-bottom: 29px;
+  }
+
+
+}
+
+.btn{
+  text-align: center;
+  background: url('../images/evenement.png') repeat 0 0;
+  padding-bottom: 55px;
+  a {
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 14px 14px 30px;
+    display: block;
+    color: #ffffff;
+    background: url('../images/fleche.png') no-repeat 10% 50% #c92f51;
+    font-family: 'ProximaNovaRegular',verdana, arial, sans-serif;
+    transition: 0.2s;
+  }
+  a:hover {
+    background: url('../images/fleche.png') no-repeat 13% 50%;
+    transition: 0.2s;
   }
 }

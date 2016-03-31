@@ -18,7 +18,7 @@
 			</li>
 			<li><a href="{{url('galerie-categories')}}">Galerie</a></li>
 
-			<li><a href="{{url('livredor')}}">Livre d'or</a></li>
+			<li><a href="{{url('livredor')}}">Livre d'or</a></li>....
 			<li>
 				<a href="{{url('contact')}}">Contact</a>
 				<ul>

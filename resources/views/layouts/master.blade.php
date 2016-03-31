@@ -42,6 +42,7 @@
 	@yield('scripts')
 	<!-- Initialize Swiper -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="{{url('assets/js/windows_viewport.js')}}" > </script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/ScrollToPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 	<script src="{{url('assets/js/swiper.min.js')}}"></script>
@@ -102,5 +103,6 @@
 
 		});
 	</script>
+
 </body>
 </html>
